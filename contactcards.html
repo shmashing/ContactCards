@@ -8,18 +8,28 @@
   <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
   <script>
     $(document).ready(function(){
+
       $('button').click(function(){
         var elements = document.getElementsByClassName('field');
         var inputs = [];
 
         for(i=0; i<elements.length;i++){
           inputs.push(elements[i].value);
+          elements[i].value = '';
         }
-        console.log(inputs); 
-
-        $('#wrapper').children('.card_container').append("<div class='card' data-desc=" + inputs[2] +"><h1>"+ inputs[0] + " " + inputs[1] + "</h1><h5>Click for Description</h5></div>");
+        console.log(inputs[2]); 
+        $('.card_container').append("<div class='card' data-desc='" + inputs[2] + "'><h1>"+ inputs[0] + " " + inputs[1] + "</h1><h5>Click for Description</h5></div>");
       })
 
+      $(document).on('click', '.card', function(){
+        var text = $(this).attr('data-desc');
+        $(this).attr('data-desc', '') 
+        $(this).children().toggle()
+
+        if(text != ''){
+          $(this).append("<h3>" + text + "</h3>");
+        } 
+      })
     });
   </script>
 </head>

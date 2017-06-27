@@ -3,9 +3,7 @@
     padding:0px;
 }
 #wrapper{
-    background: grey;
-    height: 100%;
-    width: 100%;
+    background-color: grey;
 }
 .add_users{
     width: 25%;
@@ -35,7 +33,6 @@ table{
     position: absolute;
     right: 150px;
     top: 15px;
-    border: 1px solid white;
 }
 .card{
     display: inline-block;
