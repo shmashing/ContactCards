@@ -15,7 +15,9 @@
         for(i=0; i<elements.length;i++){
           inputs.push(elements[i].value);
         }
-        console.log(inputs);    
+        console.log(inputs); 
+
+        $('#wrapper').children('.card_container').append("<div class='card' data-desc=" + inputs[2] +"><h1>"+ inputs[0] + " " + inputs[1] + "</h1><h5>Click for Description</h5></div>");
       })
 
     });
@@ -39,6 +41,8 @@
       <p>Short Description:</p>
       <textarea name='description' class='field description_area'></textarea>
       <button>Add User</button>
+    </div>
+    <div class='card_container'>
     </div>
   </div> <!-- end of wrapper -->
 </body>
