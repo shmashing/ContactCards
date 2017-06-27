@@ -9,6 +9,9 @@
   <script>
     $(document).ready(function(){
 
+      $('#wrapper').width(document.body.clientWidth);
+      $('#wrapper').height(document.body.clientHeight);
+
       $('button').click(function(){
         var elements = document.getElementsByClassName('field');
         var inputs = [];
@@ -18,8 +21,9 @@
           elements[i].value = '';
         }
         console.log(inputs[2]); 
-        $('.card_container').append("<div class='card' data-desc='" + inputs[2] + "'><h1>"+ inputs[0] + " " + inputs[1] + "</h1><h5>Click for Description</h5></div>");
+        $('.card_container').append('<div class="card" data-desc="' + inputs[2] + '"><h1>'+ inputs[0] + " " + inputs[1] + "</h1><h5>Click for Description</h5></div>");
       })
+
 
       $(document).on('click', '.card', function(){
         var text = $(this).attr('data-desc');
